@@ -39,6 +39,7 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 .concept{background:var(--gold);color:var(--ink);font-size:13px;text-align:center;padding:7px 16px}
+@media (prefers-reduced-motion:reduce){.hero-card{transition:none}.hero-card:hover{transform:none}}
 .concept a{font-weight:600}
 
 header{background:var(--ink);color:var(--paper);position:sticky;top:0;z-index:5;border-bottom:1px solid #1d1c19}
@@ -59,9 +60,10 @@ header{background:var(--ink);color:var(--paper);position:sticky;top:0;z-index:5;
 .btn-gold:hover{background:#d8bb85}
 .btn-ghost{border-color:#3a3833;color:var(--paper)}
 .btn-ghost:hover{border-color:var(--gold)}
-.hero-card{background:var(--paper);border-radius:4px;padding:28px 28px 22px;position:relative}
-.hero-card img{aspect-ratio:1/1;object-fit:contain;width:100%;mix-blend-mode:multiply}
-.hero-card .tag{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:14px;margin-top:6px;color:var(--text)}
+.hero-card{background:#fff;border-radius:28px;padding:32px 32px 24px;position:relative;text-decoration:none;transition:transform .3s ease}
+.hero-card:hover{transform:translateY(-4px)}
+.hero-card img{aspect-ratio:1/1;object-fit:contain;width:100%}
+.hero-card .tag{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #ece8e0;padding-top:14px;margin-top:6px;color:var(--text)}
 .hero-card .tag b{font:600 22px/1.1 var(--display)}
 .hero-card .tag span{font-size:14px;color:var(--muted)}
 
@@ -70,8 +72,8 @@ section{padding:104px 0}
 h2{font:500 clamp(38px,5vw,60px)/1.02 var(--display);letter-spacing:-.01em;max-width:18ch}
 .sub{margin-top:18px;color:var(--muted);max-width:56ch}
 
-.brands{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px;background:var(--line);border:1px solid var(--line)}
-.brand{background:var(--paper);padding:40px 36px 36px;display:flex;flex-direction:column;gap:16px;min-height:300px}
+.brands{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
+.brand{background:#fbfaf7;border:1px solid var(--line);border-radius:28px;padding:40px 36px 36px;display:flex;flex-direction:column;gap:16px;min-height:300px}
 .brand .meta{font-size:13px;color:var(--muted)}
 .brand h3{font:500 44px/1 var(--display)}
 .brand p{color:var(--muted);max-width:40ch}
@@ -81,9 +83,9 @@ h2{font:500 clamp(38px,5vw,60px)/1.02 var(--display);letter-spacing:-.01em;max-w
 .product{background:var(--bone)}
 .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:52px}
 .gallery{display:grid;gap:12px}
-.gallery .main{background:#fff;padding:28px;border-radius:4px}
+.gallery .main{background:#fff;padding:36px;border-radius:28px}
 .gallery .main img{aspect-ratio:1/1;object-fit:contain;width:100%}
-.gallery .detail{border-radius:4px;width:100%;height:auto}
+.gallery .detail{border-radius:28px;width:100%;height:auto}
 .pinfo{position:sticky;top:100px}
 .pinfo h3{font:500 48px/1 var(--display)}
 .price{display:flex;gap:16px;align-items:baseline;margin-top:14px}
@@ -97,7 +99,9 @@ h2{font:500 clamp(38px,5vw,60px)/1.02 var(--display);letter-spacing:-.01em;max-w
 .brew{margin-top:56px}
 .brew h4{font:500 30px/1.1 var(--display);margin-bottom:6px}
 .brew p{color:var(--muted);font-size:15px;margin-bottom:20px}
+.table-wrap{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
 table{width:100%;border-collapse:collapse;font-size:15px;background:var(--paper)}
+tbody tr:last-child td{border-bottom:0}
 th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
 th{font-weight:500;color:var(--muted);font-size:13px;background:var(--paper)}
 td:first-child{font-weight:500}
@@ -225,7 +229,7 @@ footer{background:var(--ink);color:var(--muted-dark);border-top:1px solid #1d1c1
     <div class="brew">
       <h4>Grind settings by brew method</h4>
       <p>Start here, then adjust a few clicks to taste.</p>
-      <table>
+      <div class="table-wrap"><table>
         <thead><tr><th>Brew method</th><th>Grind size</th><th>Clicks</th><th>Fine to coarse</th></tr></thead>
         <tbody>
           <tr><td>Espresso</td><td>100 to 200 µm</td><td>24 to 36</td><td><span class="dial"><i style="width:22%"></i></span></td></tr>
@@ -233,7 +237,7 @@ footer{background:var(--ink);color:var(--muted-dark);border-top:1px solid #1d1c1
           <tr><td>Pour-over</td><td>500 to 700 µm</td><td>54 to 72</td><td><span class="dial"><i style="width:64%"></i></span></td></tr>
           <tr><td>French press</td><td>900 to 1,200 µm</td><td>80 to 102</td><td><span class="dial"><i style="width:92%"></i></span></td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
   </div>
 </section>
